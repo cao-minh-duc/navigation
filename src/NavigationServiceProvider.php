@@ -3,6 +3,7 @@
 namespace UiBuilder\Navigation;
 
 use Illuminate\Support\ServiceProvider;
+use UiBuilder\Navigation\View\Navigation;
 
 class NavigationServiceProvider extends ServiceProvider
 {
@@ -15,9 +16,12 @@ class NavigationServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'navigation');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'navigation');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'navigation');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadViewComponentsAs('', [
+            Navigation::class,
+        ]);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -25,9 +29,9 @@ class NavigationServiceProvider extends ServiceProvider
             ], 'config');
 
             // Publishing the views.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/navigation'),
-            ], 'views');*/
+            ], 'views');
 
             // Publishing assets.
             /*$this->publishes([
@@ -54,7 +58,7 @@ class NavigationServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('navigation', function () {
-            return new Navigation;
+            return new \UiBuilder\Navigation\Navigation;
         });
     }
 }
