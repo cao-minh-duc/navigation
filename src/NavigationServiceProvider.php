@@ -3,7 +3,7 @@
 namespace UiBuilder\Navigation;
 
 use Illuminate\Support\ServiceProvider;
-use UiBuilder\Navigation\View\Navigation;
+use UiBuilder\Navigation\Views\Navigation;
 
 class NavigationServiceProvider extends ServiceProvider
 {
