@@ -2,14 +2,14 @@
     class="flex items-center justify-between w-full text-xs text-white text-gray-400 bg-default-700 lg:text-sm lg:flex-col lg:h-screen">
 
     <div class="p-2 text-center text-white lg:mt-10">
-        {{ $logo }}
+        {{-- {{ $logo->src }} --}}
     </div>
     <nav class="fixed bottom-0 w-full text-white lg:static xl:mb-20">
         <ul class="flex justify-between lg:flex-col">
             @foreach($features as $feature)
                 <li class="w-full">
                     <a href="{{ route($feature->route) }}"
-                        class="block pt-3 pb-2 text-center {{ $feature->selected ? 'bg-default-900' : 'bg-default-700' }} lg:py-4 ">
+                        class="block pt-3 pb-2 text-center {{ $feature->isSelected() ? 'bg-default-900' : 'bg-default-700' }} lg:py-4 ">
                         <div class="w-6 h-6 mx-auto fill-current">
                             {!! $feature->icon !!}
                         </div>
