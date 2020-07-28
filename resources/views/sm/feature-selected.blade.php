@@ -1,0 +1,1 @@
+<a href="{{ route($feature->route) }}" class="block px-3 py-2 text-base font-medium text-white rounded-md bg-default-900 focus:outline-none focus:text-white focus:bg-default-700">{{$feature->name}}</a>
