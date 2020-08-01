@@ -6,6 +6,10 @@
 return [
     'logo' => '',
     'features' => [
-        ''
+        [
+            'name' => 'Home',
+            'route' => 'home',
+            'route_prefix' => 'home'
+        ]
     ] 
 ];
